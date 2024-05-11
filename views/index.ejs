@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+                <% if (locals.blogPosts) { %>
+                    <% for (var i = 0; i < blogPosts.length; i++) { %>
+                        <p><%= blogPosts[i] %></p>
+                    <% } %>
+                <% } %>
+                <form action="/submit" method="POST">
+                    <div class="d-flex justify-content-center row g-3">
+                        <textarea class="jaro-normal" name="blogPost">Write your post here</textarea>
+                        <div>
+                            <input class="btn-grad jaro-normal" type="submit">
+                            <a class="btn-grad jaro-normal" href="/edit">Edit</a>
+                            <a class="btn-grad jaro-normal" href="/remove">Remove</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <%- include("partials/footer.ejs") %>
+    </body>
+</html>

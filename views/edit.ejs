@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+            <% if (locals.blogPosts) { %>
+                <% for (var i = 0; i < blogPosts.length; i++) { %>
+                    <p><%= i + 1 %>. <%= blogPosts[i] %></p>
+                <% } %>
+            <% } %>
+            <form action="/edit" method="POST">
+                <div class="d-flex justify-content-center row g-3">
+                    <div>
+                        <label class="jaro-normal">Enter the post number: </label>
+                        <input id="post-number" class="jaro-normal" name="postNumber">
+                    </div>
+                    <textarea class="jaro-normal" name="blogPost">Write your post here</textarea>
+                    <div>
+                        <input class="btn-grad jaro-normal" type="submit">
+                    </div>
+                </div>
+            </form>
+            </div>
+        </section>
+        <%- include("partials/footer.ejs") %>
+    </body>
+</html>
